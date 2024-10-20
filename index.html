@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/main.css">
+
+
+     
+</head>
+
+<body>
+
+
+    <header>
+
+        <img class="logo" src="images/LOGO.png" alt="logo">
+        <nav>
+            <ul class="sidebar">
+              <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+              <li><a href="index.html" style="border-bottom: 1px solid white; padding-bottom: 8px;  ">Startseite</a></li>
+                    <li><a href="services.html">Beratungen</a></li>
+                    <li><a href="faq.html">FAQ</a></li> 
+                    <li><a href="about-us.html">Berater</a></li>
+                    <li><a href="ContactUs.html">Kontakt</a></li> 
+            </ul>
+            <ul>
+              
+                <li><a href="index.html" style="border-bottom: 1px solid white; padding-bottom: 8px;" class="hideOnMobile">Home</a></li>
+                <li><a class="hideOnMobile" href="services.html">Category</a></li>
+                <li><a class="hideOnMobile" href="faq.html">Contact</a></li> 
+                <li><a class="hideOnMobile" href="about-us.html">Cart</a></li>
+                
+              <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+            </ul>
+          </nav>
+        
+          <script>
+            function showSidebar(){
+              const sidebar = document.querySelector('.sidebar')
+              sidebar.style.display = 'flex'
+            }
+            function hideSidebar(){
+              const sidebar = document.querySelector('.sidebar')
+              sidebar.style.display = 'none'
+            }
+          </script>
+
+
+
+    </header>
+
+
+    <section id="home">
+        <div class="container">
+            <img src="/images/image.png" alt="Description of Image" class="container-image">
+            <div class="container-text">
+                <h2>ABODY</h2>
+                <p>This is a sample text inside the container. You can add any description or content here to describe the image.</p>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <section id="category">
+
+        <div class="containers">
+            <div class="cards grid">
+                <div class="card">
+                    <div class="img-box">
+                        <img src="images/jewellery.jpg" alt="half day">
+                    </div>
+                    <div class="card-content">
+                    <h1 class="card-d-heading">Jewellery</h1>
+                    <p class="card-text">
+                        5 Stunden Beratung bzw. Coaching inkl. Pausen.
+                    </p>
+                </div>
+                </div>
+                <div class="card">
+                    <div class="img-box">
+                        <img src="images/dress.jpg" alt="full day">
+                    </div>
+                    <div class="card-content">
+                    <h1 class="card-d-heading">Dress</h1>
+                    <p class="card-text">
+                        9 Stunden Beratung bzw. Coaching inkl. Pausen.
+                    </p>
+                </div>
+                </div>
+        
+                <div class="card">
+                    <div class="img-box">
+                        <img src="images/perfumes.jpg" alt="Annual">
+                    </div>
+                    <div class="card-content">
+                    <h1 class="card-d-heading">Perfumes</h1>
+                    <p class="card-text">
+                        Vier ganztägige Beratungssitzungen à 9 Stunden inkl. Pausen und Catering, plus 10 Telecoaching-Einheiten.
+                    </p>
+                </div>
+                </div>
+
+                
+        
+                <div class="card">
+                    <div class="img-box">
+                        <img src="images/furniture.jpg" alt="Emergency">
+                    </div>
+                    <div class="card-content">
+                    <h1 class="card-d-heading">furniture</h1>
+                    <p class="card-text">
+                        Flexibel planbare Beratungs sitzungen mit bedarfsange passter Dauer und Anzahl.
+                    </p>
+                </div>
+                </div>
+
+                <div class="card">
+                    <div class="img-box">
+                        <img src="images/makeup.jpg" alt="Emergency">
+                    </div>
+                    <div class="card-content">
+                    <h1 class="card-d-heading">Makeup</h1>
+                    <p class="card-text">
+                        Flexibel planbare Beratungs sitzungen mit bedarfsange passter Dauer und Anzahl.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img-box">
+                    <img src="images/doc.png" alt="Emergency">
+                </div>
+                <div class="card-content">
+                <h1 class="card-d-heading">beratung</h1>
+                <p class="card-text">
+                    Flexibel planbare Beratungs sitzungen mit bedarfsange passter Dauer und Anzahl.
+                </p>
+            </div>
+            
+            
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer>
+        
+    </footer>
+
+
+
+
+
+
+</body>
+
+
+
+</html>
