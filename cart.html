@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart</title>
+</head>
+<body>
+    <h1>  WELCOME TO YOUR CART</h1>
+    <div id="cart"></div>
+    <p><a href="dress.html">Back </a></p>
+
+    <script>
+        function displayCart() {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let cartDiv = document.getElementById("cart");
+
+            if (cart.length === 0) {
+                cartDiv.innerHTML = "<p>Your cart is empty.</p>";    //if cart is empty
+            } else {
+                let cartContent = "<ol>";  //list with array of products
+                let totalPrice = 0; //initial price
+
+                cart.forEach((item, index) => {
+                    cartContent += `<li>${item.name} - $${item.price}</li>`;   //for each element in the cart   
+                    totalPrice += item.price;                                 //TO DO add a counter 
+                });
+
+                cartContent += `</ol><p>Total Price: $${totalPrice}</p>`;
+                cartDiv.innerHTML = cartContent;
+            }
+        }
+
+       
+        displayCart();    //Somroop to do
+    </script>
+</body>
+</html>

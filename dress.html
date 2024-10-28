@@ -1,31 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/category.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-
-
-     
 </head>
 
 <body>
-
-
     <header>
-
         <img class="logo" src="images/LOGO.png" alt="logo">
         <nav>
             <ul class="sidebar">
-              <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
-              <li><a href="index.html" style="border-bottom: 1px solid white; padding-bottom: 8px;  ">Startseite</a></li>
-                    <li><a href="services.html">Beratungen</a></li>
-                    <li><a href="faq.html">FAQ</a></li> 
-                    <li><a href="about-us.html">Berater</a></li>
-                    <li><a href="ContactUs.html">Kontakt</a></li> 
+                <li onclick="hideSidebar()"><a href="#">Close</a></li>
+                <li><a href="index.html">Startseite</a></li>
+                <li><a href="services.html">Beratungen</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="about-us.html">Berater</a></li>
+                <li><a href="ContactUs.html">Kontakt</a></li>
             </ul>
             <ul>
                 <li><a href="index.html" style="border-bottom: 1px solid white; padding-bottom: 8px;" class="hideOnMobile">Home</a></li>
@@ -45,9 +38,8 @@
                 <li><a class="hideOnMobile" href="ContactUs.html">Contact</a></li>
                 <li><a class="hideOnMobile" href="about-us.html">Cart</a></li>
               </ul>
-          </nav>
-        
-          <script>
+        </nav>
+        <script>
             function showSidebar(){
               const sidebar = document.querySelector('.sidebar')
               sidebar.style.display = 'flex'
@@ -57,11 +49,7 @@
               sidebar.style.display = 'none'
             }
           </script>
-
-
-
     </header>
-
 
     <section id="home">
         <div class="container">
@@ -73,58 +61,86 @@
         </div>
     </section>
 
-
     <section id="category">
         <div class="containers">
             <div class="cards grid">
                 <div class="product-card">
                     <img src="/images/Jewellery.jpg" alt="">
-                    <h4>Product Name</h4>
+                    <h4>Product Name1</h4>
                     <div>
-                        <span>$123</span>
-                        <button>Add to cart</button>
-                    </div>
-                </div>
-                <!-- Repeat product-card divs for multiple cards -->
-                <div class="product-card">
-                    <img src="/images/Jewellery.jpg" alt="">
-                    <h4>Product Name</h4>
-                    <div>
-                        <span>$123</span>
-                        <button>Add to cart</button>
+                        <span>$121</span>
+                        <button onclick="addToCart('Product Name1', 121)">Add to Cart</button>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <img src="/images/Jewellery.jpg" alt="">
-                    <h4>Product Name</h4>
+                    <h4>Product Name2</h4>
                     <div>
-                        <span>$123</span>
-                        <button>Add to cart</button>
+                        <span>$122</span>
+                        <button onclick="addToCart('Product Name2', 122)">Add to Cart</button>
                     </div>
                 </div>
-                
+
+                <div class="product-card">
+                    <img src="/images/Jewellery.jpg" alt="">
+                    <h4>Product Name3</h4>
+                    <div>
+                        <span>$123</span>
+                        <button onclick="addToCart('Product Name3', 123)">Add to Cart</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    
-    
-    
 
-    
+    <!-- Centered Notification -->
+    <div id="notification">Item added to cart!</div>
+    <p><a href="cart.html">Go to Cart</a></p>
 
+    <script>
+        function addToCart(name, price) {
+            // Retrieve or initialize cart
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart.push({ name: name, price: price });
+            localStorage.setItem("cart", JSON.stringify(cart));
 
+            // Show notification
+            showNotification(`${name} added to cart!`);
+        }
 
+        function showNotification(message) {
+            let notification = document.getElementById("notification");
+            notification.innerText = message;
+            notification.style.visibility = "visible";
+            notification.style.opacity = "1";
 
+            // Hide notification after 2 seconds
+            setTimeout(() => {
+                notification.style.opacity = "0";
+                notification.style.visibility = "hidden";
+            }, 2000);
+        }
+    </script>
 
-
-
-
-
-
-
-
-
+    <style>
+        /* Centered Notification styling */
+        #notification {
+            visibility: hidden;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 5px;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+    </style>
     <footer class="footer1">
         <div class="container2">
             <a href="#" class="brand">ABODY</a>
@@ -162,13 +178,5 @@
         
     </footer>
 
-
-
-
-
-
 </body>
-
-
-
 </html>
