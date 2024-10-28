@@ -1,0 +1,617 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  body {
+    width: 100%;
+    background-color: #ffffff;
+    color: #000000;
+    font-family: Poppins;
+    position: relative; /* Ensure body is positioned relative */
+    min-height: 100vh;
+    align-items: center;
+    
+  }
+
+   /* Style for the dropdown container */
+.dropdown {
+  position: relative;
+}
+
+/* Style for dropdown content */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  z-index: 1;
+  padding: 0; /* Remove padding for the dropdown */
+}
+
+/* Style each dropdown link */
+.dropdown-content a {
+  color: #000;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for dropdown links */
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Display dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Responsive styling */
+@media screen and (max-width: 768px) {
+  .dropdown-content {
+    position: static; /* Full-width dropdown for mobile */
+    box-shadow: none;
+  }
+  
+  .dropdown-content a {
+    padding: 8px;
+  }
+  
+  .hideOnMobile {
+    width: 100%;
+    text-align: left;
+    padding: 10px 16px;
+  }
+}
+
+
+  #home {
+    padding: 50px;
+    padding-top: 0px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Container styling */
+.container1 {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 300px; /* Adjust the height of the container as needed */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Image styling */
+.container-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Makes sure the image covers the entire container */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* Text overlay styling */
+.container-text {
+    position: absolute; /* Change to absolute for easy centering */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Move the container back by half its own width and height */
+    
+    z-index: 2;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.21); /* Optional: Add background for contrast */
+    
+    border-radius: 5px;
+    width: 700px;
+    padding: 20px; /* Adjust padding as needed */
+    text-align: center; /* Center text inside the container */
+}
+.container-text h2 {
+    margin: 0;
+    font-size: 46px;
+    color: #fff;
+    padding-bottom: 10px;
+}
+
+.container-text p {
+    font-size: 18px;
+    color: #fff;
+    line-height: 1;
+}
+
+
+  
+  header {
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+    align-items: center;
+    padding: 20px 10%;
+    /*background-color: #0C111D;*/
+    background-color: #fff;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensure the header is on top of other content */
+  }
+  
+  .logo {
+    position: absolute; /* Position the logo absolutely within the header */
+    left: 10%; /* Adjust as necessary for your design */
+    cursor: pointer;
+    width: 200px;
+  }
+  
+  nav ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 50px;
+    
+  }
+  nav li{
+    height: 50px;
+    
+  }
+
+  nav li a{
+    height: 100%;
+    padding: 0 20px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    
+  }
+  
+  nav li a:hover {
+    transform: translateY(-1px);
+    background-color: #00000009;
+    border-radius: 10px;
+  }
+  
+  
+  nav a:hover{
+    background-color: #f0f0f0;
+  }
+  nav li:first-child{
+    margin-right: auto;
+  }
+  .sidebar{
+    position: fixed;
+    top: 0; 
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: #222c3cf1;
+    backdrop-filter: blur(3px);
+    /*box-shadow: -10px 0 10px rgba(59, 51, 51, 0.1);*/
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    z-index: 1000; /* High z-index to stay above other elements */
+      padding-top: 50px; /* Add padding to avoid overlapping with the header */
+  }
+  .sidebar li{
+    width: 100%;
+  }
+  .sidebar a{
+    width: 100%;
+    color: #ffffff;
+  }
+  .menu-button{
+    display: none;
+  }
+  
+  .sidebar  a:hover {
+    color: #f59a28;
+    transform: translateY(-.5px);
+  }
+  
+  nav a:hover {
+    background-color: rgba(128, 128, 128, 0);
+    
+  }
+  
+  
+  @media(max-width: 800px){
+    .hideOnMobile{
+      display: none;
+    }
+    .menu-button{
+      display: block;
+    }
+  }
+  @media(max-width: 400px){
+    .sidebar{
+      width: 100%;
+    }
+  }
+
+
+
+  /*---------------- bg image ---*/
+
+  #home {
+    padding: 50px;
+    padding-top: 0px;
+    display: flex;
+    justify-content: center;
+}
+
+
+/* Contact Section Styling */
+.Contact {
+    min-height: 80vh;
+    text-align: center;
+    padding: 0 15px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.column {
+    flex: 1;
+    padding: 20px;
+}
+
+.container h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #1F212C;
+    text-align: center;
+}
+
+/* Contact Form Styling */
+.contact-form h3,
+.contact-info h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #1F212C;
+}
+
+.contact-form p {
+    font-size: 16px;
+    color: #1F212C;
+    margin-bottom: 20px;
+}
+
+.email-container {
+    margin: 10px 0;
+}
+
+a.email-link {
+    color: #000dbd;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+a.email-link:hover {
+    font-weight: bold;
+}
+
+/* Button Styling */
+button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #0000005b;
+    color: #070707;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-align: center;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: #1F212C;
+    color: white;
+}
+
+/* Social Icons */
+.social {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.social i {
+    color: #1F212C;
+    font-size: 30px;
+    padding: 0 10px;
+}
+
+.contact-info {
+    text-align: center;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+    color: #1F212C;
+}
+
+.contact-info i {
+    color: #1F212C;
+    margin-right: 10px;
+}
+
+/* Media Queries */
+
+/* Medium Devices (Tablets) */
+@media screen and (max-width: 768px) {
+    .Contact {
+        padding: 0 10px;
+    }
+
+    .contact-wrapper {
+        flex-direction: column;
+    }
+
+    .container h2 {
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+
+    .contact-form h3,
+    .contact-info h3 {
+        font-size: 24px;
+    }
+
+    .contact-form p,
+    .contact-info p {
+        font-size: 14px;
+    }
+
+    .social i {
+        font-size: 26px;
+    }
+
+    .submit-section,
+    button {
+        padding-left: 0;
+        text-align: center;
+        padding: 10px;
+    }
+}
+
+/* Small Devices (Phones) */
+@media screen and (max-width: 480px) {
+    .Contact {
+        padding: 0 5px;
+    }
+
+    .container h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .contact-info {
+        text-align: left;
+    }
+
+    .contact-form h3,
+    .contact-info h3 {
+        font-size: 20px;
+    }
+
+    .contact-form p,
+    .contact-info p {
+        font-size: 13px;
+    }
+
+    .social i {
+        font-size: 24px;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+/* Specific Styles for Nav at 768px and Above */
+@media (min-width: 768px) {
+    nav .logo {
+        max-width: 1280px;
+        padding: 25px 40px;
+    }
+
+    nav .logo .menu {
+        display: inline;
+    }
+
+    nav .logo .menu ul {
+        display: flex;
+        gap: 50px;
+        list-style: none;
+    }
+
+    nav .logo .menu ul li a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    nav .logo img {
+        display: none;
+    }
+}
+
+/* Popup Styles */
+.popup {
+    position: fixed; /* Changed from absolute to fixed for better placement */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Added overlay effect */
+    z-index: 1000; /* Ensure popup is above all content */
+}
+
+.popup.active {
+    display: flex; /* Display when active */
+    pointer-events: auto;
+    opacity: 1;
+    transition: opacity 0.4s ease; /* Added smooth transition */
+}
+
+.popup-box {
+    width: 90%; /* Responsive width */
+    max-width: 900px; /* Maximum width */
+    max-height: 70vh; /* Set maximum height to make the popup scrollable */
+    background-color: #e6e6e7;
+    color: #070707;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 6px;
+    text-align: center; 
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.popup-box h1 {
+    line-height: 1.2;
+    margin-bottom: 20px; 
+}
+
+.popup-box button {
+    margin-top: 20px; 
+}
+
+
+
+
+
+
+
+
+
+
+/*-----------foooter----*/
+
+
+footer {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border-top: solid 2px #000000; /* Added a border-top for a line above the footer */
+  background-color: #ffffff; /* Ensure the footer has a background color for contrast */
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer p {
+  color: #000000;
+  max-width: 35em;
+  font-size: 0.9em;
+  line-height: 23px;
+  padding-top: 0px;
+}
+
+footer .container1 {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2em;
+}
+
+.brand {
+  display: block;
+  font-size: 1.8em;
+  font-weight: 600;
+  margin-bottom: 1em;
+  color: #000000; /* Ensure text is visible */
+}
+
+.media-icons {
+  display: flex;
+  justify-content: center;
+  margin: 1.5em 0;
+}
+
+.media-icons li {
+  display: inline-block;
+  margin: 0 0.5em;
+}
+
+.media-icons a {
+  font-size: 1.5em; /* Adjust icon size */
+  width: 1.5em;
+  height: 1.5em;
+  border: 1px #000000 solid;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  color: #000000;
+}
+
+.media-icons a:hover {
+  background: #000000;
+  color: #ffffff;
+}
+
+.footer1 .menu a {
+  transition: 0.3s;
+  font-weight: 600;
+  color: #000000; /* Ensure menu text is visible */
+}
+
+.footer1 .menu a:hover {
+  color: #7b7b7b;
+}
+
+footer a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.footer1 {
+  text-align: center;
+  padding-top: 1em;
+}
+
+.footer1 .menu li {
+  display: inline-block;
+  margin: 0.7em;
+  text-align: center;
+}
+
+.footer1 p {
+  margin: 0 auto;
+}
+
+.footer1 .media-icons {
+  margin: 1.5em 0;
+}
