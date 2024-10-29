@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/category.css">
+    <link rel="stylesheet" href="/services.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="/cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 
 
@@ -70,58 +71,62 @@
 
 
     <section id="home">
-        <div class="container">
-            <img src="/images/cart.jpg" alt="Description of Image" class="container-image">
-            <div class="container-text">
-                <h2>YOUR CART</h2>
-                <!--<p> "Discover timeless elegance with our curated selection of fine jewellery. 
-                    From sparkling diamonds to intricate handmade pieces, find the perf
-                    ect adornment for any occasion."</p> -->
-            </div>
-        </div>
-    </section>
-
-
-    <section id="carts">
-
-        <div class="cart-container">
+        <div class="container3">
             
-            <div id="cart" class="cart-items">
-                <!-- Cart items will be dynamically added here -->
-            </div>
-            <div class="cart-total">
-                <h3>Total Price:</h3>
-                <p id="total-price">$0</p>
+            <div class="container3-text">
+                <h2>OUR SERVICES</h2>
+                
             </div>
         </div>
-    
-        <script>
-            function displayCart() {
-                let cart = JSON.parse(localStorage.getItem("cart")) || [];
-                let cartDiv = document.getElementById("cart");
-                let totalPriceDiv = document.getElementById("total-price");
-    
-                if (cart.length === 0) {
-                    cartDiv.innerHTML = "<p>Your cart is empty.</p>";
-                } else {
-                    let cartContent = "<ol>";
-                    let totalPrice = 0;
-    
-                    cart.forEach((item) => {
-                        cartContent += `<li>${item.name} - $${item.price}</li>`;
-                        totalPrice += item.price;
-                    });
-    
-                    cartContent += "</ol>";
-                    cartDiv.innerHTML = cartContent;
-                    totalPriceDiv.textContent = `$${totalPrice.toFixed(2)}`;
-                }
-            }
-    
-            displayCart();
-        </script>
+
+
         
     </section>
+
+    <section>
+
+
+        <div class="container4">
+            <div class="row">
+                <div class="service">
+                    <i class="fa-solid fa-laptop"></i>
+                    <h2>Web Design</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                </div>
+                <div class="service">
+                    <i class="fa-solid fa-laptop"></i>
+                    <h2>Web Development</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                </div>
+                <div class="service">
+                    <i class="fa-solid fa-laptop"></i>
+                    <h2>SEO</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                </div>
+                <div class="service">
+                    <i class="fa-solid fa-laptop"></i>
+                    <h2>Content Creation</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                </div>
+                <div class="service">
+                    <i class="fa-solid fa-laptop"></i>
+                    <h2>Digital Marketing</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                </div>
+                <div class="service">
+                    <i class="fa-solid fa-laptop"></i>
+                    <h2>Digital Marketing</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                </div>
+            </div>
+        </div>
+        
+
+</section>
+
+
+
+    
     
     
     

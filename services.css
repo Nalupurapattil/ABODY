@@ -1,0 +1,93 @@
+.container3 {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 200px; /* Adjust the height of the container as needed */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Image styling */
+.container3-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Makes sure the image covers the entire container */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* Text overlay styling */
+.container3-text {
+    position: absolute; /* Change to absolute for easy centering */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Move the container back by half its own width and height */
+    
+    z-index: 2;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.651); /* Optional: Add background for contrast */
+    
+    border-radius: 5px;
+    width: 700px;
+    padding: 20px; /* Adjust padding as needed */
+    text-align: center; /* Center text inside the container */
+}
+.container3-text h2 {
+    margin: 0;
+    font-size: 46px;
+    color: #fff;
+    padding-bottom: 10px;
+}
+
+.container3-text p {
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.5;
+}
+
+.container4{
+    margin-bottom: 30px;
+    width: 100%;
+    padding: 0 20%;
+}
+
+
+.container4 .row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.container4 .service {
+    /*background: rgb(255, 255, 255);*/
+    padding: 25px 10px;
+    color: #000000;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform .5s;
+    background: linear-gradient(145deg, #e6e6e6, #ffffff);
+    box-shadow: 8px 8px 16px #d1d1d1,
+                -8px -8px 16px #ffffff;
+    cursor: pointer;
+}
+
+
+.container4 .row .service:hover {
+    transform: scale(1.1);
+    background: #1F212C;
+    color: white;
+}
+
+.container4 .row .service i{
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.container4 .row .service h2{
+    
+    margin-bottom: 10px;
+}
+
