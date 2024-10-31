@@ -108,21 +108,21 @@
                 totalPriceDiv.textContent = `$${totalPrice.toFixed(2)}`;
             }
 
-            // Update quantity of a specific item in the cart
+            
             function changeQuantity(index, change) {
                 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
                 if (cart[index].quantity + change >= 1) {
                     cart[index].quantity += change;
                 } else {
-                    cart.splice(index, 1); // Remove item if quantity < 1
+                    cart.splice(index, 1); 
                 }
 
                 localStorage.setItem("cart", JSON.stringify(cart));
-                displayCart(); // Refresh cart display
+                displayCart(); //refresh  display
             }
 
-            // Remove item from cart
+           
             function removeItem(index) {
                 let cart = JSON.parse(localStorage.getItem("cart")) || [];
                 cart.splice(index, 1);
@@ -130,7 +130,7 @@
                 displayCart();
             }
 
-            // Load and display the cart on page load
+            //Load and display the cart 
             displayCart();
         </script>
         <style>
@@ -152,7 +152,7 @@
     border-bottom: 1px solid #ccc;
 }
 
-/* Style for the item details */
+
 .cart-item span {
     flex: 1;
     font-size: 16px;
@@ -160,14 +160,14 @@
     margin-right: 10px;
 }
 
-/* Style for the quantity control buttons and display */
+
 .quantity-control {
     display: flex;
     align-items: center;
     gap: 5px;
 }
 
-/* Style for the quantity buttons */
+
 .quantity-control button {
     padding: 5px 10px;
     font-size: 16px;
@@ -182,7 +182,7 @@
     background-color: #0056b3;
 }
 
-/* Style for the remove button */
+
 .remove-item-btn {
     padding: 5px 10px;
     color: white;
@@ -196,7 +196,7 @@
     background-color: #c82333;
 }
 
-/* Style for the total price display */
+
 #total-price {
     font-size: 18px;
     font-weight: bold;
