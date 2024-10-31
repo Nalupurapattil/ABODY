@@ -95,10 +95,10 @@
 
                     cartDiv.innerHTML += `
                         <div class="cart-item">
-                            <span>${item.quantity} x ${item.name} - $${item.price.toFixed(2)} each, Total: $${itemTotal.toFixed(2)}</span>
+                            <span>  ${item.name} - $${item.price.toFixed(2)} * ${item.quantity} : $${itemTotal.toFixed(2)}</span>
                             <div class="quantity-control">
                                 <button onclick="changeQuantity(${index}, -1)">−</button>
-                                <span id="quantity-${index}">${item.quantity}</span>
+                                <span id="quantity-${index}"> ${item.quantity}</span>
                                 <button onclick="changeQuantity(${index}, 1)">+</button>
                             </div>
                             <button onclick="removeItem(${index})" class="remove-item-btn">Remove</button>
@@ -174,7 +174,7 @@
     color: white;
     background-color: #007bff;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
 }
 
