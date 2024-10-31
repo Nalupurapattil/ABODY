@@ -69,7 +69,12 @@
                     <h4>Product Name1</h4>
                     <div>
                         <span>$121</span>
-                        <button onclick="addToCart('Product Name1', 121)">Add to Cart</button>
+                        <button onclick="addToCart('Product Name1', 121, document.getElementById('quantity1').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity1')" class="quantity-btn">-</button>
+                            <span id="quantity1" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity1')" class="quantity-btn">+</button>
+                        </div>
                     </div>
                 </div>
 
@@ -78,7 +83,12 @@
                     <h4>Product Name2</h4>
                     <div>
                         <span>$122</span>
-                        <button onclick="addToCart('Product Name2', 122)">Add to Cart</button>
+                        <button onclick="addToCart('Product Name2', 122, document.getElementById('quantity2').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity2')" class="quantity-btn">-</button>
+                            <span id="quantity2" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity2')" class="quantity-btn">+</button>
+                        </div>
                     </div>
                 </div>
 
@@ -87,7 +97,12 @@
                     <h4>Product Name3</h4>
                     <div>
                         <span>$123</span>
-                        <button onclick="addToCart('Product Name3', 123)">Add to Cart</button>
+                        <button onclick="addToCart('Product Name3', 123, document.getElementById('quantity3').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity3')" class="quantity-btn">-</button>
+                            <span id="quantity3" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity3')" class="quantity-btn">+</button>
+                        </div>
                     </div>
                 </div>
 
@@ -96,7 +111,12 @@
                     <h4>Product Name3</h4>
                     <div>
                         <span>$123</span>
-                        <button onclick="addToCart('Product Name3', 123)">Add to Cart</button>
+                        <button onclick="addToCart('Product Name3', 123, document.getElementById('quantity4').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity4')" class="quantity-btn">-</button>
+                            <span id="quantity4" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity4')" class="quantity-btn">+</button>
+                        </div>
                     </div>
                 </div>
 
@@ -105,7 +125,12 @@
                     <h4>Product Name3</h4>
                     <div>
                         <span>$123</span>
-                        <button onclick="addToCart('Product Name3', 123)">Add to Cart</button>
+                        <button onclick="addToCart('Product Name3', 123, document.getElementById('quantity5').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity5')" class="quantity-btn">-</button>
+                            <span id="quantity5" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity5')" class="quantity-btn">+</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -117,15 +142,21 @@
     <p><a href="cart.html">Go to Cart</a></p>
 
     <script>
-        function addToCart(name, price) {
-            // Retrieve or initialize cart
-            let cart = JSON.parse(localStorage.getItem("cart")) || [];
-            cart.push({ name: name, price: price });
-            localStorage.setItem("cart", JSON.stringify(cart));
+        function addToCart(name, price, quantity) {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let existingItem = cart.find(item => item.name === name);
 
-            // Show notification
-            showNotification(`${name} added to cart!`);
+        if (existingItem) {
+            // Increase quantity if the item already exists
+            existingItem.quantity += parseInt(quantity);
+        } else {
+            // Add new item with specified initial quantity
+            cart.push({ name: name, price: parseFloat(price), quantity: parseInt(quantity) });
         }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+        showNotification(`${name} *  ${quantity} added to cart.`);
+    }
 
         function showNotification(message) {
             let notification = document.getElementById("notification");
@@ -139,10 +170,22 @@
                 notification.style.visibility = "hidden";
             }, 2000);
         }
+
+        function changeQuantity(change, elementId) {
+            let quantity = document.getElementById(elementId);
+            let currentQuantity = parseInt(quantity.innerText);
+            if (currentQuantity + change >= 1) { //minimum quantity of 1
+                quantity.innerText = currentQuantity + change;
+            }
+        }
+
+        function getQuantity(elementId) {
+            return parseInt(document.getElementById(elementId).innerText);
+        }
     </script>
 
     <style>
-        /* Centered Notification styling */
+        /* notificaton when zou click thhe add to cart button */
         #notification {
             visibility: hidden;
             background-color: #4CAF50;
@@ -157,6 +200,23 @@
             z-index: 1000;
             opacity: 0;
             transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .quantity-control {
+            display: inline-flex;
+            align-items: center;
+            margin: 5px;
+        }
+        .quantity-btn {
+            background-color: #ddd;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        .quantity-display {
+            padding: 0 10px;
+            font-size: 14px;
         }
     </style>
     <footer class="footer1">
