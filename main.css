@@ -292,6 +292,7 @@
     height: 30rem;
     object-fit: cover;
   }
+  
   .grid {
     display: grid;
     grid-template-columns: repeat(3, 2fr);
