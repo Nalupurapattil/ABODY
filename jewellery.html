@@ -82,111 +82,425 @@
     <section id="category">
         <div class="containers">
             <div class="cards grid">
+                <!--1-->
                 <div class="product-card">
-                    <img src="/images/Jewellery.jpg" alt="">
-                    <h4>Product Name</h4>
+                    <img src="/images/JEW/JEW-001.jpg" alt="">
+                    <h4>JEW-001</h4>
                     <div>
-                        <span>$123</span>
-                        <button>Add to cart</button>
+                        <span>$</span>
+                        <button  class="add" onclick="addToCart('JEW-001', 123, document.getElementById('quantity1').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity1')" class="quantity-btn">-</button>
+                            <span id="quantity1" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity1')" class="quantity-btn">+</button>
+                        </div>
                     </div>
                 </div>
-                <!-- Repeat product-card divs for multiple cards -->
+                <!-- 2 -->
                 <div class="product-card">
-                    <img src="/images/Jewellery.jpg" alt="">
-                    <h4>Product Name</h4>
+                    <img src="/images/JEW/JEW-002.jpg" alt="">
+                    <h4>JEW-001</h4>
                     <div>
-                        <span>$123</span>
-                        <button>Add to cart</button>
+                        <span>$</span>
+                        <button  class="add" onclick="addToCart('JEW-002', 123, document.getElementById('quantity2').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity2')" class="quantity-btn">-</button>
+                            <span id="quantity2" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity2')" class="quantity-btn">+</button>
+                        </div>
                     </div>
                 </div>
-                <!-- Repeat product-card divs for multiple cards -->
+                <!-- 3 -->
                 <div class="product-card">
-                    <img src="/images/Jewellery.jpg" alt="">
-                    <h4>Product Name</h4>
+                    <img src="/images/JEW/JEW-003.jpg" alt="">
+                    <h4>JEW-003</h4>
                     <div>
-                        <span>$123</span>
-                        <button>Add to cart</button>
+                        <span>$</span>
+                        <button  class="add" onclick="addToCart('JEW-003', 123, document.getElementById('quantity3').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity3')" class="quantity-btn">-</button>
+                            <span id="quantity3" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity3')" class="quantity-btn">+</button>
+                        </div>
                     </div>
                 </div>
-                <!-- Repeat product-card divs for multiple cards -->
+                <!-- 4 -->
                 <div class="product-card">
-                    <img src="/images/Jewellery.jpg" alt="">
-                    <h4>Product Name</h4>
+                    <img src="/images/JEW/JEW-004.jpg" alt="">
+                    <h4>JEW-004</h4>
                     <div>
                         <span>$123</span>
-                        <button>Add to cart</button>
+                        <button  class="add" onclick="addToCart('JEW-004', 123, document.getElementById('quantity4').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity4')" class="quantity-btn">-</button>
+                            <span id="quantity4" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity4')" class="quantity-btn">+</button>
+                        </div>
                     </div>
                 </div>
-                <!-- Repeat product-card divs for multiple cards -->
+                <!-- 5 -->
                 <div class="product-card">
-                    <img src="/images/Jewellery.jpg" alt="">
-                    <h4>Product Name</h4>
+                    <img src="/images/JEW/JEW-005.jpg" alt="">
+                    <h4>JEW-005</h4>
                     <div>
-                        <span>$123</span>
-                        <button>Add to cart</button>
+                        <span>$</span>
+                        <button  class="add" onclick="addToCart('JEW-005', 123, document.getElementById('quantity5').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity5')" class="quantity-btn">-</button>
+                            <span id="quantity5" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity5')" class="quantity-btn">+</button>
+                        </div>
                     </div>
                 </div>
-                <!-- Repeat product-card divs for multiple cards -->
+                <!-- 6 -->
                 <div class="product-card">
-                    <img src="/images/Jewellery.jpg" alt="">
-                    <h4>Product Name</h4>
+                    <img src="/images/JEW/JEW-006.jpg" alt="">
+                    <h4>JEW-006</h4>
                     <div>
-                        <span>$123</span>
-                        <button>Add to cart</button>
+                        <span>$</span>
+                        <button  class="add" onclick="addToCart('JEW-006', 123, document.getElementById('quantity6').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity6')" class="quantity-btn">-</button>
+                            <span id="quantity6" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity6')" class="quantity-btn">+</button>
+                        </div>
                     </div>
                 </div>
-                <!-- Repeat product-card divs for multiple cards -->
+                <!-- 7 -->
                 <div class="product-card">
-                    <img src="/images/Jewellery.jpg" alt="">
-                    <h4>Product Name</h4>
+                    <img src="/images/JEW/JEW-007.jpg" alt="">
+                    <h4>JEW-007</h4>
                     <div>
-                        <span>$123</span>
-                        <button>Add to cart</button>
+                        <span>$</span>
+                        <button  class="add" onclick="addToCart('JEW-007', 123, document.getElementById('quantity7').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity7')" class="quantity-btn">-</button>
+                            <span id="quantity7" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity7')" class="quantity-btn">+</button>
+                        </div>
                     </div>
                 </div>
-                <!-- Repeat product-card divs for multiple cards -->
+                <!-- 8 -->
                 <div class="product-card">
-                    <img src="/images/Jewellery.jpg" alt="">
-                    <h4>Product Name</h4>
+                    <img src="/images/JEW/JEW-008.jpg" alt="">
+                    <h4>JEW-008</h4>
                     <div>
-                        <span>$123</span>
-                        <button>Add to cart</button>
+                        <span>$</span>
+                        <button  class="add" onclick="addToCart('JEW-008', 123, document.getElementById('quantity8').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity8')" class="quantity-btn">-</button>
+                            <span id="quantity8" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity8')" class="quantity-btn">+</button>
+                        </div>
                     </div>
                 </div>
-                <!-- Repeat product-card divs for multiple cards -->
+                <!-- 9 -->
                 <div class="product-card">
-                    <img src="/images/Jewellery.jpg" alt="">
-                    <h4>Product Name</h4>
+                    <img src="/images/JEW/JEW-009.jpg" alt="">
+                    <h4>JEW-009</h4>
                     <div>
-                        <span>$123</span>
-                        <button>Add to cart</button>
+                        <span>$</span>
+                        <button  class="add" onclick="addToCart('JEW-009', 123, document.getElementById('quantity9').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity9')" class="quantity-btn">-</button>
+                            <span id="quantity9" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity9')" class="quantity-btn">+</button>
+                        </div>
                     </div>
                 </div>
-                <!-- Repeat product-card divs for multiple cards -->
+                <!-- 10 -->
                 <div class="product-card">
-                    <img src="/images/Jewellery.jpg" alt="">
-                    <h4>Product Name</h4>
+                    <img src="/images/JEW/JEW-010.jpg" alt="">
+                    <h4>JEW-010</h4>
                     <div>
-                        <span>$123</span>
-                        <button>Add to cart</button>
+                        <span>$</span>
+                        <button  class="add" onclick="addToCart('JEW-010', 123, document.getElementById('quantity10').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity10')" class="quantity-btn">-</button>
+                            <span id="quantity10" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity10')" class="quantity-btn">+</button>
+                        </div>
                     </div>
                 </div>
-                <!-- Repeat product-card divs for multiple cards -->
+                <!-- 11 -->
                 <div class="product-card">
-                    <img src="/images/Jewellery.jpg" alt="">
-                    <h4>Product Name</h4>
+                    <img src="/images/JEW/JEW-011.jpg" alt="">
+                    <h4>JEW-011</h4>
                     <div>
-                        <span>$123</span>
-                        <button>Add to cart</button>
+                        <span>$</span>
+                        <button  class="add" onclick="addToCart('JEW-011', 123, document.getElementById('quantity11').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity11')" class="quantity-btn">-</button>
+                            <span id="quantity11" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity11')" class="quantity-btn">+</button>
+                        </div>
                     </div>
                 </div>
-                <!-- Repeat product-card divs for multiple cards -->
+                <!-- 12 -->
                 <div class="product-card">
-                    <img src="/images/Jewellery.jpg" alt="">
-                    <h4>Product Name</h4>
+                    <img src="/images/JEW/JEW-012.jpg" alt="">
+                    <h4>JEW-012</h4>
                     <div>
-                        <span>$123</span>
-                        <button>Add to cart</button>
+                        <span>$</span>
+                        <button  class="add" onclick="addToCart('JEW-012', 123, document.getElementById('quantity12').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity12')" class="quantity-btn">-</button>
+                            <span id="quantity12" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity12')" class="quantity-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 13 -->
+                <div class="product-card">
+                    <img src="/images/JEW/JEW-013.jpg" alt="">
+                    <h4>JEW-013</h4>
+                    <div>
+                        <span>$</span>
+                        <button  class="add" onclick="addToCart('JEW-013', 123, document.getElementById('quantity13').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity13')" class="quantity-btn">-</button>
+                            <span id="quantity13" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity13')" class="quantity-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 14 -->
+                <div class="product-card">
+                    <img src="/images/JEW/JEW-014.jpg" alt="">
+                    <h4>JEW-014</h4>
+                    <div>
+                        <span></span>
+                        <button  class="add" onclick="addToCart('JEW-14', 123, document.getElementById('quantity14').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity14')" class="quantity-btn">-</button>
+                            <span id="quantity14" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity14')" class="quantity-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 15 -->
+                <div class="product-card">
+                    <img src="/images/JEW/JEW-015.jpg" alt="">
+                    <h4>JEW-015</h4>
+                    <div>
+                        <span>$</span>
+                        <button  class="add" onclick="addToCart('JEW-015', 123, document.getElementById('quantity15').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity15')" class="quantity-btn">-</button>
+                            <span id="quantity15" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity15')" class="quantity-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 16 -->
+                <div class="product-card">
+                    <img src="/images/JEW/JEW-016.jpg" alt="">
+                    <h4>JEW-016</h4>
+                    <div>
+                        <span>$</span>
+                        <button  class="add" onclick="addToCart('JEW-016', 123, document.getElementById('quantity16').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity16')" class="quantity-btn">-</button>
+                            <span id="quantity16" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity16')" class="quantity-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 17 -->
+                <div class="product-card">
+                    <img src="/images/JEW/JEW-017.jpg" alt="">
+                    <h4>JEW-017</h4>
+                    <div>
+                        <span>$</span>
+                        <button  class="add" onclick="addToCart('JEW-017', 123, document.getElementById('quantity17').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity17')" class="quantity-btn">-</button>
+                            <span id="quantity17" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity17')" class="quantity-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 18 -->
+                <div class="product-card">
+                    <img src="/images/JEW/JEW-018.jpg" alt="">
+                    <h4>JEW-018</h4>
+                    <div>
+                        <span>$</span>
+                        <button  class="add" onclick="addToCart('JEW-018', 123, document.getElementById('quantity18').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity18')" class="quantity-btn">-</button>
+                            <span id="quantity18" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity18')" class="quantity-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 19 -->
+                <div class="product-card">
+                    <img src="/images/JEW/JEW-019.jpg" alt="">
+                    <h4>JEW-019</h4>
+                    <div>
+                        <span>$</span>
+                        <button  class="add" onclick="addToCart('JEW-019', 123, document.getElementById('quantity19').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity19')" class="quantity-btn">-</button>
+                            <span id="quantity19" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity19')" class="quantity-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 20 -->
+                <div class="product-card">
+                    <img src="/images/JEW/JEW-020.jpg" alt="">
+                    <h4>JEW-020</h4>
+                    <div>
+                        <span>$</span>
+                        <button  class="add" onclick="addToCart('JEW-020', 123, document.getElementById('quantity20').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity20')" class="quantity-btn">-</button>
+                            <span id="quantity20" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity20')" class="quantity-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 21 -->
+                <div class="product-card">
+                    <img src="/images/JEW/JEW-021.jpg" alt="">
+                    <h4>JEW-021</h4>
+                    <div>
+                        <span>$</span>
+                        <button  class="add" onclick="addToCart('JEW-021', 123, document.getElementById('quantity21').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity21')" class="quantity-btn">-</button>
+                            <span id="quantity21" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity21')" class="quantity-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 22 -->
+                <div class="product-card">
+                    <img src="/images/JEW/JEW-022.jpg" alt="">
+                    <h4>JEW-022</h4>
+                    <div>
+                        <span>$</span>
+                        <button  class="add" onclick="addToCart('JEW-022', 123, document.getElementById('quantity22').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity22')" class="quantity-btn">-</button>
+                            <span id="quantity22" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity22')" class="quantity-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 23 -->
+                <div class="product-card">
+                    <img src="/images/JEW/JEW-023.jpg" alt="">
+                    <h4>JEW-023</h4>
+                    <div>
+                        <span>$</span>
+                        <button  class="add" onclick="addToCart('JEW-023', 123, document.getElementById('quantity23').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity23')" class="quantity-btn">-</button>
+                            <span id="quantity23" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity23')" class="quantity-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 24 -->
+                <div class="product-card">
+                    <img src="/images/JEW/JEW-024.jpg" alt="">
+                    <h4>JEW-024</h4>
+                    <div>
+                        <span>$</span>
+                        <button  class="add" onclick="addToCart('JEW-024', 123, document.getElementById('quantity24').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity24')" class="quantity-btn">-</button>
+                            <span id="quantity24" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity24')" class="quantity-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 25 -->
+                <div class="product-card">
+                    <img src="/images/JEW/JEW-025.jpg" alt="">
+                    <h4>JEW-025</h4>
+                    <div>
+                        <span>$</span>
+                        <button  class="add" onclick="addToCart('JEW-025', 123, document.getElementById('quantity25').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity25')" class="quantity-btn">-</button>
+                            <span id="quantity25" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity25')" class="quantity-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 26 -->
+                <div class="product-card">
+                    <img src="/images/JEW/JEW-026.jpg" alt="">
+                    <h4>JEW-026
+                    </h4>
+                    <div>
+                        <span>$</span>
+                        <button  class="add" onclick="addToCart('JEW-026', 123, document.getElementById('quantity26').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity26')" class="quantity-btn">-</button>
+                            <span id="quantity26" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity26')" class="quantity-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 27 -->
+                <div class="product-card">
+                    <img src="/images/JEW/JEW-027.jpg" alt="">
+                    <h4>JEW-027</h4>
+                    <div>
+                        <span>$</span>
+                        <button  class="add" onclick="addToCart('JEW-0207', 123, document.getElementById('quantity27').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity27')" class="quantity-btn">-</button>
+                            <span id="quantity27" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity27')" class="quantity-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 28 -->
+                <div class="product-card">
+                    <img src="/images/JEW/JEW-028.jpg" alt="">
+                    <h4>JEW-028</h4>
+                    <div>
+                        <span>$</span>
+                        <button  class="add" onclick="addToCart('JEW-028', 123, document.getElementById('quantity28').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity28')" class="quantity-btn">-</button>
+                            <span id="quantity28" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity28')" class="quantity-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 29 -->
+                <div class="product-card">
+                    <img src="/images/JEW/JEW-029.jpg" alt="">
+                    <h4>JEW-029</h4>
+                    <div>
+                        <span>$</span>
+                        <button  class="add" onclick="addToCart('JEW-029', 123, document.getElementById('quantity29').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity29')" class="quantity-btn">-</button>
+                            <span id="quantity29" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity29')" class="quantity-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 30 -->
+                <div class="product-card">
+                    <img src="/images/JEW/JEW-030.jpg" alt="">
+                    <h4>JEW-030</h4>
+                    <div>
+                        <span>$</span>
+                        <button  class="add" onclick="addToCart('JEW-030', 123, document.getElementById('quantity30').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity30')" class="quantity-btn">-</button>
+                            <span id="quantity30" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity30')" class="quantity-btn">+</button>
+                        </div>
                     </div>
                 </div>
                 <!-- Repeat product-card divs for multiple cards -->
@@ -194,6 +508,101 @@
         </div>
     </section>
     
+
+
+
+
+    <!-- Centered Notification -->
+    <div id="notification">Item added to cart!</div>
+    
+
+    <script>
+        function addToCart(name, price, quantity) {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let existingItem = cart.find(item => item.name === name);
+
+        if (existingItem) {
+            // Increase quantity if the item already exists
+            existingItem.quantity += parseInt(quantity);
+        } else {
+            // Add new item with specified initial quantity
+            cart.push({ name: name, price: parseFloat(price), quantity: parseInt(quantity) });
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+        showNotification(`${name} *  ${quantity} added to cart.`);
+    }
+
+        function showNotification(message) {
+            let notification = document.getElementById("notification");
+            notification.innerText = message;
+            notification.style.visibility = "visible";
+            notification.style.opacity = "1";
+
+            // Hide notification after 2 seconds
+            setTimeout(() => {
+                notification.style.opacity = "0";
+                notification.style.visibility = "hidden";
+            }, 2000);
+        }
+
+        function changeQuantity(change, elementId) {
+            let quantity = document.getElementById(elementId);
+            let currentQuantity = parseInt(quantity.innerText);
+            if (currentQuantity + change >= 1) { //minimum quantity of 1
+                quantity.innerText = currentQuantity + change;
+            }
+        }
+
+        function getQuantity(elementId) {
+            return parseInt(document.getElementById(elementId).innerText);
+        }
+    </script>
+
+    <style>
+        /* notificaton when zou click thhe add to cart button */
+        #notification {
+            visibility: hidden;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 5px;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .quantity-control {
+            display: inline-flex;
+            align-items: center;
+            margin: 4px;
+            
+        }
+        .quantity-btn {
+            background-color: #2e2e2e;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 12px;
+            height: 200px;
+            
+            color: #fff;
+            border: none;
+            border-radius: 25%;
+            width: 25px;
+            height: 25px;
+            font-size: 0.6em;
+        }
+        .quantity-display {
+            padding: 0 10px;
+            font-size: 14px;
+        }
+    </style>
     
     
 
@@ -220,7 +629,7 @@
                 </li>
 
                 <li>
-                    <a href="sevices.html">Services</a>
+                    <a href="services.html">Services</a>
                 </li>
                 
                 <li>

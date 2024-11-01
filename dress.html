@@ -1,26 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/category.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+
+     
 </head>
 
 <body>
+
+
     <header>
+
         <img class="logo" src="images/LOGO.png" alt="logo">
         <nav>
             <ul class="sidebar">
-                <li onclick="hideSidebar()"><a href="#">Close</a></li>
-                <li><a href="index.html">Startseite</a></li>
-                <li><a href="services.html">Beratungen</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="about-us.html">Berater</a></li>
-                <li><a href="ContactUs.html">Kontakt</a></li>
+              <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+              <li><a href="index.html" style="border-bottom: 1px solid white; padding-bottom: 8px;  ">Startseite</a></li>
+                    <li><a href="services.html">Beratungen</a></li>
+                    <li><a href="faq.html">FAQ</a></li> 
+                    <li><a href="about-us.html">Berater</a></li>
+                    <li><a href="ContactUs.html">Kontakt</a></li> 
             </ul>
             <ul>
+              
                 <li><a href="index.html" style="border-bottom: 1px solid white; padding-bottom: 8px;" class="hideOnMobile">Home</a></li>
                 
                 <!-- Dropdown menu for Category -->
@@ -35,11 +43,16 @@
                   </div>
                 </li>
                 
+                <li><a class="hideOnMobile" href="services.html">Services</a></li> 
                 <li><a class="hideOnMobile" href="ContactUs.html">Contact</a></li>
-                <li><a class="hideOnMobile" href="cart.html">Cart</a></li>
-              </ul>
-        </nav>
-        <script>
+                
+                <li><a class="hideOnMobile" href="cart.html">Cart</a></li> 
+                
+              <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+            </ul>
+          </nav>
+        
+          <script>
             function showSidebar(){
               const sidebar = document.querySelector('.sidebar')
               sidebar.style.display = 'flex'
@@ -49,27 +62,33 @@
               sidebar.style.display = 'none'
             }
           </script>
+
+
+
     </header>
+
 
     <section id="home">
         <div class="container">
             <img src="/images/dress.jpg" alt="Description of Image" class="container-image">
             <div class="container-text">
                 <h2>DRESS</h2>
-                <p>"Step into style with our collection of dresses, perfect for every occasion. Whether you’re looking for casual chic or evening glamour, explore designs that complement your unique taste."</p>
+                <p> "Step into style with our collection of dresses, perfect for every occasion. Whether you’re looking for casual chic or evening glamour, explore designs that complement your unique taste."</p>
             </div>
         </div>
     </section>
 
+
     <section id="category">
         <div class="containers">
             <div class="cards grid">
+                <!--1-->
                 <div class="product-card">
-                    <img src="/images/Jewellery.jpg" alt="">
-                    <h4>Product Name1</h4>
+                    <img src="/images/Dress/DRS-001/a1.jpg" alt="">
+                    <h4>DRS-001</h4>
                     <div>
-                        <span>$121</span>
-                        <button onclick="addToCart('Product Name1', 121, document.getElementById('quantity1').innerText)">Add to Cart</button>
+                        <span>4£</span>
+                        <button  class="add" onclick="addToCart('DRS-001', 4, document.getElementById('quantity1').innerText)">Add to Cart</button>
                         <div class="quantity-control">
                             <button onclick="changeQuantity(-1, 'quantity1')" class="quantity-btn">-</button>
                             <span id="quantity1" class="quantity-display">1</span>
@@ -77,13 +96,13 @@
                         </div>
                     </div>
                 </div>
-
+                <!-- 2 -->
                 <div class="product-card">
-                    <img src="/images/Jewellery.jpg" alt="">
-                    <h4>Product Name2</h4>
+                    <img src="/images/Dress/DRS-002/IMG-20241007-WA0070.jpg" alt="">
+                    <h4>DRS-002</h4>
                     <div>
-                        <span>$122</span>
-                        <button onclick="addToCart('Product Name2', 122, document.getElementById('quantity2').innerText)">Add to Cart</button>
+                        <span>20£</span>
+                        <button  class="add" onclick="addToCart('DRS-002', 20, document.getElementById('quantity2').innerText)">Add to Cart</button>
                         <div class="quantity-control">
                             <button onclick="changeQuantity(-1, 'quantity2')" class="quantity-btn">-</button>
                             <span id="quantity2" class="quantity-display">1</span>
@@ -91,13 +110,13 @@
                         </div>
                     </div>
                 </div>
-
+                <!-- 3 -->
                 <div class="product-card">
-                    <img src="/images/Jewellery.jpg" alt="">
-                    <h4>Product Name3</h4>
+                    <img src="/images/Dress/DRS-003/IMG-20241007-WA0080.jpg" alt="">
+                    <h4>DRS-003</h4>
                     <div>
-                        <span>$123</span>
-                        <button onclick="addToCart('Product Name3', 123, document.getElementById('quantity3').innerText)">Add to Cart</button>
+                        <span>20£</span>
+                        <button  class="add" onclick="addToCart('DRS-003', 20, document.getElementById('quantity3').innerText)">Add to Cart</button>
                         <div class="quantity-control">
                             <button onclick="changeQuantity(-1, 'quantity3')" class="quantity-btn">-</button>
                             <span id="quantity3" class="quantity-display">1</span>
@@ -105,13 +124,13 @@
                         </div>
                     </div>
                 </div>
-
+                <!-- 4 -->
                 <div class="product-card">
-                    <img src="/images/Jewellery.jpg" alt="">
-                    <h4>Product Name3</h4>
+                    <img src="/images/Dress/DRS-004/IMG-20241007-WA0083.jpg" alt="">
+                    <h4>DRS-004</h4>
                     <div>
-                        <span>$123</span>
-                        <button onclick="addToCart('Product Name3', 123, document.getElementById('quantity4').innerText)">Add to Cart</button>
+                        <span>6£</span>
+                        <button  class="add" onclick="addToCart('DRS-004', 6, document.getElementById('quantity4').innerText)">Add to Cart</button>
                         <div class="quantity-control">
                             <button onclick="changeQuantity(-1, 'quantity4')" class="quantity-btn">-</button>
                             <span id="quantity4" class="quantity-display">1</span>
@@ -119,13 +138,13 @@
                         </div>
                     </div>
                 </div>
-
+                <!-- 5 -->
                 <div class="product-card">
-                    <img src="/images/Jewellery.jpg" alt="">
-                    <h4>Product Name3</h4>
+                    <img src="/images/Dress/DRS-005/IMG-20241010-WA0166.jpg" alt="">
+                    <h4>DRS-005</h4>
                     <div>
-                        <span>$123</span>
-                        <button onclick="addToCart('Product Name3', 123, document.getElementById('quantity5').innerText)">Add to Cart</button>
+                        <span>10£</span>
+                        <button  class="add" onclick="addToCart('DRS-005', 10, document.getElementById('quantity5').innerText)">Add to Cart</button>
                         <div class="quantity-control">
                             <button onclick="changeQuantity(-1, 'quantity5')" class="quantity-btn">-</button>
                             <span id="quantity5" class="quantity-display">1</span>
@@ -133,13 +152,270 @@
                         </div>
                     </div>
                 </div>
+                <!-- 6 -->
+                <div class="product-card">
+                    <img src="/images/Dress/DRS-006/IMG-20241010-WA0174.jpg" alt="">
+                    <h4>DRS-006</h4>
+                    <div>
+                        <span>10£</span>
+                        <button  class="add" onclick="addToCart('DRS-006', 10, document.getElementById('quantity6').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity6')" class="quantity-btn">-</button>
+                            <span id="quantity6" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity6')" class="quantity-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 7 -->
+                <div class="product-card">
+                    <img src="/images/Dress/DRS-007/IMG-20241010-WA0010.jpg" alt="">
+                    <h4>DRS-007</h4>
+                    <div>
+                        <span>9£</span>
+                        <button  class="add" onclick="addToCart('DRS-007', 9, document.getElementById('quantity7').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity7')" class="quantity-btn">-</button>
+                            <span id="quantity7" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity7')" class="quantity-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 8 -->
+                <div class="product-card">
+                    <img src="/images/Dress/DRS-008/IMG-20241010-WA0030.jpg" alt="">
+                    <h4>DRS-008</h4>
+                    <div>
+                        <span>40£</span>
+                        <button  class="add" onclick="addToCart('DRS-008', 40, document.getElementById('quantity8').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity8')" class="quantity-btn">-</button>
+                            <span id="quantity8" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity8')" class="quantity-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 9 -->
+                <div class="product-card">
+                    <img src="/images/Dress/DRS-009/IMG-20241010-WA0056.jpg" alt="">
+                    <h4>DRS-009</h4>
+                    <div>
+                        <span>9£</span>
+                        <button  class="add" onclick="addToCart('DRS-009', 9, document.getElementById('quantity9').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity9')" class="quantity-btn">-</button>
+                            <span id="quantity9" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity9')" class="quantity-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 10 -->
+                <div class="product-card">
+                    <img src="/images/Dress/DRS-010/IMG-20241010-WA0060.jpg" alt="">
+                    <h4>DRS-010</h4>
+                    <div>
+                        <span>8£</span>
+                        <button  class="add" onclick="addToCart('DRS-010', 8, document.getElementById('quantity10').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity10')" class="quantity-btn">-</button>
+                            <span id="quantity10" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity10')" class="quantity-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 11 -->
+                <div class="product-card">
+                    <img src="/images/Dress/DRS-011/IMG-20241010-WA0066.jpg" alt="">
+                    <h4>DRS-011</h4>
+                    <div>
+                        <span>8£</span>
+                        <button  class="add" onclick="addToCart('DRS-011', 8, document.getElementById('quantity11').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity11')" class="quantity-btn">-</button>
+                            <span id="quantity11" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity11')" class="quantity-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 12 -->
+                <div class="product-card">
+                    <img src="/images/Dress/DRS-012/IMG-20241010-WA0075.jpg" alt="">
+                    <h4>DRS-012</h4>
+                    <div>
+                        <span>17£</span>
+                        <button  class="add" onclick="addToCart('DRS-012', 17, document.getElementById('quantity12').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity12')" class="quantity-btn">-</button>
+                            <span id="quantity12" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity12')" class="quantity-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 13 -->
+                <div class="product-card">
+                    <img src="/images/Dress/DRS-013/IMG-20241010-WA0086.jpg" alt="">
+                    <h4>DRS-013</h4>
+                    <div>
+                        <span>12£</span>
+                        <button  class="add" onclick="addToCart('DRS-013', 12, document.getElementById('quantity13').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity13')" class="quantity-btn">-</button>
+                            <span id="quantity13" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity13')" class="quantity-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 14 -->
+                <div class="product-card">
+                    <img src="/images/Dress/DRS-014/IMG-20241010-WA0094.jpg" alt="">
+                    <h4>DRS-014</h4>
+                    <div>
+                        <span>10£</span>
+                        <button  class="add" onclick="addToCart('DRS-14', 10, document.getElementById('quantity14').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity14')" class="quantity-btn">-</button>
+                            <span id="quantity14" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity14')" class="quantity-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 15 -->
+                <div class="product-card">
+                    <img src="/images/Dress/DRS-015/IMG-20241010-WA0097.jpg" alt="">
+                    <h4>DRS-015</h4>
+                    <div>
+                        <span>$</span>
+                        <button  class="add" onclick="addToCart('DRS-015', 123, document.getElementById('quantity15').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity15')" class="quantity-btn">-</button>
+                            <span id="quantity15" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity15')" class="quantity-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 16 -->
+                <div class="product-card">
+                    <img src="/images/Dress/DRS-016/IMG-20241010-WA0105.jpg" alt="">
+                    <h4>DRS-016</h4>
+                    <div>
+                        <span>7£</span>
+                        <button  class="add" onclick="addToCart('DRS-016', 7, document.getElementById('quantity16').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity16')" class="quantity-btn">-</button>
+                            <span id="quantity16" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity16')" class="quantity-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 17 -->
+                <div class="product-card">
+                    <img src="/images/Dress/DRS-017/IMG-20241010-WA0111.jpg" alt="">
+                    <h4>DRS-017</h4>
+                    <div>
+                        <span>8£</span>
+                        <button  class="add" onclick="addToCart('DRS-017', 8, document.getElementById('quantity17').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity17')" class="quantity-btn">-</button>
+                            <span id="quantity17" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity17')" class="quantity-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 18 -->
+                <div class="product-card">
+                    <img src="/images/Dress/DRS-018/IMG-20241010-WA0112.jpg" alt="">
+                    <h4>DRS-018</h4>
+                    <div>
+                        <span>8£</span>
+                        <button  class="add" onclick="addToCart('DRS-018', 8, document.getElementById('quantity18').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity18')" class="quantity-btn">-</button>
+                            <span id="quantity18" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity18')" class="quantity-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 19 -->
+                <div class="product-card">
+                    <img src="/images/Dress/DRS-019/WhatsApp Image 2024-10-10 at 05.21.49_a45c4d79.jpg" alt="">
+                    <h4>DRS-019</h4>
+                    <div>
+                        <span>7£</span>
+                        <button  class="add" onclick="addToCart('DRS-019', 7, document.getElementById('quantity19').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity19')" class="quantity-btn">-</button>
+                            <span id="quantity19" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity19')" class="quantity-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 20 -->
+                <div class="product-card">
+                    <img src="/images/Dress/DRS-020/WhatsApp Image 2024-10-10 at 05.21.51_1b9999b5.jpg" alt="">
+                    <h4>DRS-020</h4>
+                    <div>
+                        <span>15£</span>
+                        <button  class="add" onclick="addToCart('DRS-020', 15, document.getElementById('quantity20').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity20')" class="quantity-btn">-</button>
+                            <span id="quantity20" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity20')" class="quantity-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 21 -->
+                <div class="product-card">
+                    <img src="/images/Dress/DRS-021/WhatsApp Image 2024-10-10 at 05.21.52_37d44f78.jpg" alt="">
+                    <h4>DRS-021</h4>
+                    <div>
+                        <span>18£</span>
+                        <button  class="add" onclick="addToCart('DRS-021', 18, document.getElementById('quantity21').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity21')" class="quantity-btn">-</button>
+                            <span id="quantity21" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity21')" class="quantity-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 22 -->
+                <div class="product-card">
+                    <img src="/images/Dress/DRS-022/IMG-20241010-WA0126.jpg" alt="">
+                    <h4>DRS-022</h4>
+                    <div>
+                        <span>20£</span>
+                        <button  class="add" onclick="addToCart('DRS-022', 20, document.getElementById('quantity22').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity22')" class="quantity-btn">-</button>
+                            <span id="quantity22" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity22')" class="quantity-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 23 -->
+                <div class="product-card">
+                    <img src="/images/Dress/DRS-023/IMG-20241010-WA0133.jpg" alt="">
+                    <h4>DRS-023</h4>
+                    <div>
+                        <span>20£</span>
+                        <button  class="add" onclick="addToCart('DRS-023', 20, document.getElementById('quantity23').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity23')" class="quantity-btn">-</button>
+                            <span id="quantity23" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity23')" class="quantity-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 24 -->
             </div>
         </div>
     </section>
+    
+
+
+
 
     <!-- Centered Notification -->
     <div id="notification">Item added to cart!</div>
-    <p><a href="cart.html">Go to Cart</a></p>
+    
 
     <script>
         function addToCart(name, price, quantity) {
@@ -205,36 +481,62 @@
         .quantity-control {
             display: inline-flex;
             align-items: center;
-            margin: 5px;
+            margin: 4px;
+            
         }
         .quantity-btn {
-            background-color: #ddd;
+            background-color: #2e2e2e;
             border: none;
             padding: 5px 10px;
             cursor: pointer;
             font-size: 12px;
+            height: 200px;
+            
+            color: #fff;
+            border: none;
+            border-radius: 25%;
+            width: 25px;
+            height: 25px;
+            font-size: 0.6em;
         }
         .quantity-display {
             padding: 0 10px;
             font-size: 14px;
         }
     </style>
+    
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
     <footer class="footer1">
         <div class="container2">
             <a href="#" class="brand">ABODY</a>
             <ul class="menu">
                 <li>
-                    <a href="#">Home</a>
+                    <a href="index.html">Home</a>
                 </li>
+
                 <li>
-                    <a href="#">Category</a>
+                    <a href="services.html">Services</a>
                 </li>
+                
                 <li>
-                    <a href="#">Contact</a>
+                    <a href="ContactUs.html">Contact</a>
                 </li>
-                <li>
-                    <a href="#">Cart</a>
-                </li>
+                
             </ul>
 
             <ul class="media-icons">
@@ -256,5 +558,12 @@
         
     </footer>
 
+
+
+
+
 </body>
+
+
+
 </html>
