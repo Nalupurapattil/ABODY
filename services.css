@@ -48,6 +48,21 @@
     line-height: 1.5;
 }
 
+@media screen and (max-width: 576px) {
+    .container3-text {
+        font-size: 0.9em;
+        width: 200PX;
+    }
+  
+    .container3-text p{
+      font-size: 12PX;
+    }
+  
+    .container3-text h2{
+      font-size: 25px;
+    }
+  }
+
 .container4{
     margin-bottom: 30px;
     width: 100%;

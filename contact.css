@@ -129,6 +129,22 @@
     line-height: 1;
 }
 
+@media screen and (max-width: 576px) {
+  
+  .container-text {
+      font-size: 0.9em;
+      width: 200PX;
+  }
+
+  .container-text p{
+    font-size: 12PX;
+  }
+
+  .container-text h2{
+    font-size: 25px;
+  }
+}
+
 
   
   header {
