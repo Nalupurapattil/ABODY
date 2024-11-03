@@ -530,6 +530,14 @@ text-align: center;
 margin: 0 auto;
 }
 
+@media (max-width: 768px) {
+  .footer1 p {
+    padding: 30px; /* Adjust padding for mobile */
+    padding-top: 0%;
+    padding-bottom: 10px;
+  }
+}
+
 .footer1 .media-icons {
 margin: 1.5em 0;
 }
