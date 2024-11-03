@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/category.css">
+    <link rel="stylesheet" href="css/category.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 
@@ -16,42 +16,77 @@
 
 
     <header>
-
         <img class="logo" src="images/LOGO.png" alt="logo">
         <nav>
             <ul class="sidebar">
-              <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
-              <li><a href="index.html" style="border-bottom: 1px solid white; padding-bottom: 8px;  ">Startseite</a></li>
-                    <li><a href="services.html">Beratungen</a></li>
-                    <li><a href="faq.html">FAQ</a></li> 
-                    <li><a href="about-us.html">Berater</a></li>
-                    <li><a href="ContactUs.html">Kontakt</a></li> 
+                <li onclick="hideSidebar()">
+                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF">
+                        <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+                    </a>
+                </li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="ContactUs.html">Contact</a></li>
+                <li><a href="cart.html">Cart</a></li>
+    
+                <!-- Dropdown menu for Category in mobile sidebar -->
+                <li class="dropdown">
+                    <a href="#" onclick="toggleSidebarDropdown()">Category</a>
+                    <ul class="sidebar-dropdown-content" style="display: none;">
+                        <li><a href="jewellery.html">Jewellery</a></li>
+                        <li><a href="dress.html">Dress</a></li>
+                        <li><a href="perfume.html">Perfumes</a></li>
+                        <li><a href="furniture.html">Furniture</a></li>
+                        <li><a href="makeup.html">Makeup</a></li>
+                    </ul>
+                </li>
             </ul>
+            
             <ul>
-              
                 <li><a href="index.html" style="border-bottom: 1px solid white; padding-bottom: 8px;" class="hideOnMobile">Home</a></li>
-                <li><a class="hideOnMobile" href="services.html">Category</a></li>
-                <li><a class="hideOnMobile" href="faq.html">Contact</a></li> 
-                <li><a class="hideOnMobile" href="about-us.html">Cart</a></li>
-                
-              <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+                <li class="dropdown">
+                    <a class="hideOnMobile" href="#">Category</a>
+                    <div class="dropdown-content">
+                        <a href="jewellery.html">Jewellery</a>
+                        <a href="dress.html">Dress</a>
+                        <a href="perfume.html">Perfumes</a>
+                        <a href="furniture.html">Furniture</a>
+                        <a href="makeup.html">Makeup</a>
+                    </div>
+                </li>
+                <li><a class="hideOnMobile" href="services.html">Services</a></li> 
+                <li><a class="hideOnMobile" href="ContactUs.html">Contact</a></li>
+                <li><a class="hideOnMobile" href="cart.html">Cart</a></li> 
+                <li class="menu-button" onclick="showSidebar()">
+                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000">
+                        <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+                    </a>
+                </li>
             </ul>
-          </nav>
+        </nav>
         
-          <script>
+        <script>
             function showSidebar(){
-              const sidebar = document.querySelector('.sidebar')
-              sidebar.style.display = 'flex'
+                const sidebar = document.querySelector('.sidebar');
+                sidebar.style.display = 'flex';
             }
+            
             function hideSidebar(){
-              const sidebar = document.querySelector('.sidebar')
-              sidebar.style.display = 'none'
+                const sidebar = document.querySelector('.sidebar');
+                sidebar.style.display = 'none';
             }
-          </script>
-
-
-
+    
+            function toggleSidebarDropdown() {
+                const sidebarDropdown = document.querySelector('.sidebar-dropdown-content');
+                if (sidebarDropdown.style.display === 'none' || sidebarDropdown.style.display === '') {
+                    sidebarDropdown.style.display = 'block';
+                } else {
+                    sidebarDropdown.style.display = 'none';
+                }
+            }
+        </script>
     </header>
+    
 
 
     <section id="home">
@@ -68,118 +103,233 @@
     <section id="category">
         <div class="containers">
             <div class="cards grid">
+                <!--1-->
                 <div class="product-card">
-                    <img src="/images/Jewellery.jpg" alt="">
-                    <h4>Product Name</h4>
+                    <img src="/images/makeup/MKP-001.jpg" alt="">
+                    <h4>MKP-001</h4>
                     <div>
-                        <span>$123</span>
-                        <button>Add to cart</button>
+                        <span>30£</span>
+                        <button  class="add" onclick="addToCart('MKP-001', 30, document.getElementById('quantity1').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity1')" class="quantity-btn">-</button>
+                            <span id="quantity1" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity1')" class="quantity-btn">+</button>
+                        </div>
                     </div>
                 </div>
-                <!-- Repeat product-card divs for multiple cards -->
+                <!-- 2 -->
                 <div class="product-card">
-                    <img src="/images/Jewellery.jpg" alt="">
-                    <h4>Product Name</h4>
+                    <img src="/images/makeup/MKP-002.jpg" alt="">
+                    <h4>MKP-002</h4>
                     <div>
-                        <span>$123</span>
-                        <button>Add to cart</button>
+                        <span>30£</span>
+                        <button  class="add" onclick="addToCart('MKP-001', 30, document.getElementById('quantity2').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity2')" class="quantity-btn">-</button>
+                            <span id="quantity2" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity2')" class="quantity-btn">+</button>
+                        </div>
                     </div>
                 </div>
-                <!-- Repeat product-card divs for multiple cards -->
+                <!-- 3 -->
                 <div class="product-card">
-                    <img src="/images/Jewellery.jpg" alt="">
-                    <h4>Product Name</h4>
+                    <img src="/images/makeup/MKP-003.jpg" alt="">
+                    <h4>MKP-003</h4>
                     <div>
-                        <span>$123</span>
-                        <button>Add to cart</button>
+                        <span>35£</span>
+                        <button  class="add" onclick="addToCart('MKP-003', 35, document.getElementById('quantity3').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity3')" class="quantity-btn">-</button>
+                            <span id="quantity3" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity3')" class="quantity-btn">+</button>
+                        </div>
                     </div>
                 </div>
-                <!-- Repeat product-card divs for multiple cards -->
+                <!-- 4 -->
                 <div class="product-card">
-                    <img src="/images/Jewellery.jpg" alt="">
-                    <h4>Product Name</h4>
+                    <img src="/images/makeup/MKP-004.jpg" alt="">
+                    <h4>MKP-004</h4>
                     <div>
-                        <span>$123</span>
-                        <button>Add to cart</button>
+                        <span>35£</span>
+                        <button  class="add" onclick="addToCart('MKP-004', 35, document.getElementById('quantity4').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity4')" class="quantity-btn">-</button>
+                            <span id="quantity4" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity4')" class="quantity-btn">+</button>
+                        </div>
                     </div>
                 </div>
-                <!-- Repeat product-card divs for multiple cards -->
+                <!-- 5 -->
                 <div class="product-card">
-                    <img src="/images/Jewellery.jpg" alt="">
-                    <h4>Product Name</h4>
+                    <img src="/images/makeup/MKP-005.jpg" alt="">
+                    <h4>MKP-005</h4>
                     <div>
-                        <span>$123</span>
-                        <button>Add to cart</button>
+                        <span>30£</span>
+                        <button  class="add" onclick="addToCart('MKP-005', 30, document.getElementById('quantity5').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity5')" class="quantity-btn">-</button>
+                            <span id="quantity5" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity5')" class="quantity-btn">+</button>
+                        </div>
                     </div>
                 </div>
-                <!-- Repeat product-card divs for multiple cards -->
+                <!-- 6 -->
                 <div class="product-card">
-                    <img src="/images/Jewellery.jpg" alt="">
-                    <h4>Product Name</h4>
+                    <img src="/images/makeup/MKP-006.jpg" alt="">
+                    <h4>MKP-006</h4>
                     <div>
-                        <span>$123</span>
-                        <button>Add to cart</button>
+                        <span>30£</span>
+                        <button  class="add" onclick="addToCart('FUR-006', 30, document.getElementById('quantity6').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity6')" class="quantity-btn">-</button>
+                            <span id="quantity6" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity6')" class="quantity-btn">+</button>
+                        </div>
                     </div>
                 </div>
-                <!-- Repeat product-card divs for multiple cards -->
+                <!-- 7 -->
                 <div class="product-card">
-                    <img src="/images/Jewellery.jpg" alt="">
-                    <h4>Product Name</h4>
+                    <img src="/images/makeup/MKP-007.jpg" alt="">
+                    <h4>MKP-007</h4>
                     <div>
-                        <span>$123</span>
-                        <button>Add to cart</button>
+                        <span>30£</span>
+                        <button  class="add" onclick="addToCart('MKP-007', 30, document.getElementById('quantity7').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity7')" class="quantity-btn">-</button>
+                            <span id="quantity7" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity7')" class="quantity-btn">+</button>
+                        </div>
                     </div>
                 </div>
-                <!-- Repeat product-card divs for multiple cards -->
+                <!-- 8 -->
                 <div class="product-card">
-                    <img src="/images/Jewellery.jpg" alt="">
-                    <h4>Product Name</h4>
+                    <img src="/images/makeup/MKP-008.jpg" alt="">
+                    <h4>MKP-008</h4>
                     <div>
-                        <span>$123</span>
-                        <button>Add to cart</button>
+                        <span>30£</span>
+                        <button  class="add" onclick="addToCart('MKP-008', 30, document.getElementById('quantity8').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity8')" class="quantity-btn">-</button>
+                            <span id="quantity8" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity8')" class="quantity-btn">+</button>
+                        </div>
                     </div>
                 </div>
-                <!-- Repeat product-card divs for multiple cards -->
+                <!-- 9 -->
                 <div class="product-card">
-                    <img src="/images/Jewellery.jpg" alt="">
-                    <h4>Product Name</h4>
+                    <img src="/images/makeup/MKP-009.jpg" alt="">
+                    <h4>MKP-009</h4>
                     <div>
-                        <span>$123</span>
-                        <button>Add to cart</button>
+                        <span>35£</span>
+                        <button  class="add" onclick="addToCart('MKP-009', 35, document.getElementById('quantity9').innerText)">Add to Cart</button>
+                        <div class="quantity-control">
+                            <button onclick="changeQuantity(-1, 'quantity9')" class="quantity-btn">-</button>
+                            <span id="quantity9" class="quantity-display">1</span>
+                            <button onclick="changeQuantity(1, 'quantity9')" class="quantity-btn">+</button>
+                        </div>
                     </div>
                 </div>
-                <!-- Repeat product-card divs for multiple cards -->
-                <div class="product-card">
-                    <img src="/images/Jewellery.jpg" alt="">
-                    <h4>Product Name</h4>
-                    <div>
-                        <span>$123</span>
-                        <button>Add to cart</button>
-                    </div>
-                </div>
-                <!-- Repeat product-card divs for multiple cards -->
-                <div class="product-card">
-                    <img src="/images/Jewellery.jpg" alt="">
-                    <h4>Product Name</h4>
-                    <div>
-                        <span>$123</span>
-                        <button>Add to cart</button>
-                    </div>
-                </div>
-                <!-- Repeat product-card divs for multiple cards -->
-                <div class="product-card">
-                    <img src="/images/Jewellery.jpg" alt="">
-                    <h4>Product Name</h4>
-                    <div>
-                        <span>$123</span>
-                        <button>Add to cart</button>
-                    </div>
-                </div>
-                <!-- Repeat product-card divs for multiple cards -->
+                <!-- 5 -->
+           
             </div>
         </div>
     </section>
     
+
+
+
+
+    <!-- Centered Notification -->
+    <div id="notification">Item added to cart!</div>
+    
+
+    <script>
+        function addToCart(name, price, quantity) {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let existingItem = cart.find(item => item.name === name);
+
+        if (existingItem) {
+            // Increase quantity if the item already exists
+            existingItem.quantity += parseInt(quantity);
+        } else {
+            // Add new item with specified initial quantity
+            cart.push({ name: name, price: parseFloat(price), quantity: parseInt(quantity) });
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+        showNotification(`${name} *  ${quantity} added to cart.`);
+    }
+
+        function showNotification(message) {
+            let notification = document.getElementById("notification");
+            notification.innerText = message;
+            notification.style.visibility = "visible";
+            notification.style.opacity = "1";
+
+            // Hide notification after 2 seconds
+            setTimeout(() => {
+                notification.style.opacity = "0";
+                notification.style.visibility = "hidden";
+            }, 2000);
+        }
+
+        function changeQuantity(change, elementId) {
+            let quantity = document.getElementById(elementId);
+            let currentQuantity = parseInt(quantity.innerText);
+            if (currentQuantity + change >= 1) { //minimum quantity of 1
+                quantity.innerText = currentQuantity + change;
+            }
+        }
+
+        function getQuantity(elementId) {
+            return parseInt(document.getElementById(elementId).innerText);
+        }
+    </script>
+
+    <style>
+        /* notificaton when zou click thhe add to cart button */
+        #notification {
+            visibility: hidden;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 5px;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .quantity-control {
+            display: inline-flex;
+            align-items: center;
+            margin: 4px;
+            
+        }
+        .quantity-btn {
+            background-color: #2e2e2e;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 12px;
+            height: 200px;
+            
+            color: #fff;
+            border: none;
+            border-radius: 25%;
+            width: 25px;
+            height: 25px;
+            font-size: 0.6em;
+        }
+        .quantity-display {
+            padding: 0 10px;
+            font-size: 14px;
+        }
+    </style>
     
     
 
@@ -202,17 +352,17 @@
             <a href="#" class="brand">ABODY</a>
             <ul class="menu">
                 <li>
-                    <a href="#">Home</a>
+                    <a href="index.html">Home</a>
                 </li>
+
                 <li>
-                    <a href="#">Category</a>
+                    <a href="sevices.html">Services</a>
                 </li>
+                
                 <li>
-                    <a href="#">Contact</a>
+                    <a href="ContactUs.html">Contact</a>
                 </li>
-                <li>
-                    <a href="#">Cart</a>
-                </li>
+                
             </ul>
 
             <ul class="media-icons">
@@ -222,18 +372,22 @@
             </ul>
             
 
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                 Dolores adipisci laudantium, ratione exercitationem reiciendis
-                  eos numquam placeat aperiam amet pariatur dignissimos voluptate rerum ipsum dolorem,
-                   nulla reprehenderit. Fuga, autem alias.
+            <p>Founded in 2002, the Abody family business started its journey
+                in Africa, showcasing their keen understanding of
+                the local markets and their ability to navigate diverse
+                trading landscapes.
+
+                
                 </p>
+                <br>
+
+                <p>Copyright © 2024 ABODY - All Rights Reserved</p>
 
         </div>
 
 
         
     </footer>
-
 
 
 
