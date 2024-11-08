@@ -7,6 +7,25 @@
     <link rel="stylesheet" href="css/category.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/cart.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+    <script>
+        (function() {
+            emailjs.init("R7okt-8HBFjSZAlly");
+        })();
+    </script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init({
+                publicKey: "R7okt-8HBFjSZAlly",
+            });
+        })();
+    </script>
+
     <title>Cart</title>
 </head>
 
@@ -25,7 +44,7 @@
                 <li><a href="services.html">Services</a></li>
                 <li><a href="ContactUs.html">Contact</a></li>
                 <li><a href="cart.html">Cart</a></li>
-    
+
                 <!-- Dropdown menu for Category in mobile sidebar -->
                 <li class="dropdown">
                     <a href="#" onclick="toggleSidebarDropdown()">Category</a>
@@ -38,7 +57,7 @@
                     </ul>
                 </li>
             </ul>
-            
+
             <ul>
                 <li><a href="index.html" style="border-bottom: 1px solid white; padding-bottom: 8px;" class="hideOnMobile">Home</a></li>
                 <li class="dropdown">
@@ -51,9 +70,9 @@
                         <a href="makeup.html">Makeup</a>
                     </div>
                 </li>
-                <li><a class="hideOnMobile" href="services.html">Services</a></li> 
+                <li><a class="hideOnMobile" href="services.html">Services</a></li>
                 <li><a class="hideOnMobile" href="ContactUs.html">Contact</a></li>
-                <li><a class="hideOnMobile" href="cart.html">Cart</a></li> 
+                <li><a class="hideOnMobile" href="cart.html">Cart</a></li>
                 <li class="menu-button" onclick="showSidebar()">
                     <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000">
                         <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
@@ -61,18 +80,18 @@
                 </li>
             </ul>
         </nav>
-        
+
         <script>
-            function showSidebar(){
+            function showSidebar() {
                 const sidebar = document.querySelector('.sidebar');
                 sidebar.style.display = 'flex';
             }
-            
-            function hideSidebar(){
+
+            function hideSidebar() {
                 const sidebar = document.querySelector('.sidebar');
                 sidebar.style.display = 'none';
             }
-    
+
             function toggleSidebarDropdown() {
                 const sidebarDropdown = document.querySelector('.sidebar-dropdown-content');
                 if (sidebarDropdown.style.display === 'none' || sidebarDropdown.style.display === '') {
@@ -83,7 +102,7 @@
             }
         </script>
     </header>
-    
+
     <section id="home">
         <div class="container">
             <img src="/images/cart.jpg" alt="Description of Image" class="container-image">
@@ -102,10 +121,10 @@
                 <h3>Total Price:</h3>
                 <p id="total-price">$0</p>
             </div>
-            
+
         </div>
 
-        
+
 
         <script>
             // Display cart items and calculate total price
@@ -115,7 +134,7 @@
                 let totalPriceDiv = document.getElementById("total-price");
 
                 if (cart.length === 0) {
-                    cartDiv.innerHTML = "<p>Your cart is empty.</p>";   //fix this
+                    cartDiv.innerHTML = "<p>Your cart is empty.</p>"; //fix this
                     totalPriceDiv.textContent = "$0.00";
                     return;
                 }
@@ -142,21 +161,21 @@
                 totalPriceDiv.textContent = `$${totalPrice.toFixed(2)}`;
             }
 
-            
+
             function changeQuantity(index, change) {
                 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
                 if (cart[index].quantity + change >= 1) {
                     cart[index].quantity += change;
                 } else {
-                    cart.splice(index, 1); 
+                    cart.splice(index, 1);
                 }
 
                 localStorage.setItem("cart", JSON.stringify(cart));
                 displayCart(); //refresh  display
             }
 
-           
+
             function removeItem(index) {
                 let cart = JSON.parse(localStorage.getItem("cart")) || [];
                 cart.splice(index, 1);
@@ -164,86 +183,161 @@
                 displayCart();
             }
 
+
+
+
+
+            function placeOrder() {
+                let cart = JSON.parse(localStorage.getItem("cart")) || [];
+                if (cart.length === 0) {
+                    alert("Your cart is empty.");
+                    return;
+                }
+
+                let cartData = cart.map(item => ({
+                    Product: item.name,
+                    Price: item.price.toFixed(2),
+                    Quantity: item.quantity,
+                    Total: (item.price * item.quantity).toFixed(2)
+                }));
+
+                // Create a new workbook
+                const wb = XLSX.utils.book_new();
+                // Convert cart data to a worksheet
+                const ws = XLSX.utils.json_to_sheet(cartData);
+                // Append the worksheet to the workbook
+                XLSX.utils.book_append_sheet(wb, ws, "Order Summary");
+
+                // Generate a binary string
+                const wbout = XLSX.write(wb, {
+                    bookType: 'xlsx',
+                    type: 'binary'
+                });
+
+                // Convert the binary string to a blob for download
+                const blob = new Blob([s2ab(wbout)], {
+                    type: 'application/octet-stream'
+                });
+
+                // Create a link element for the download
+                const link = document.createElement("a");
+                link.href = URL.createObjectURL(blob);
+                link.download = "OrderSummary.xlsx"; // Specify the download file name
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+
+                // Prepare email body with order details
+                let emailBody = "Order Summary:\n\n";
+                cartData.forEach(item => {
+                    emailBody += `Product: ${item.Product}, Price: $${item.Price}, Quantity: ${item.Quantity}, Total: $${item.Total}\n`;
+                });
+
+                // Send email without attachment (due to EmailJS limitations)
+                sendEmail(emailBody);
+            }
+
+            function s2ab(s) {
+                const buf = new ArrayBuffer(s.length);
+                const view = new Uint8Array(buf);
+                for (let i = 0; i < s.length; i++) {
+                    view[i] = s.charCodeAt(i) & 0xFF; // Convert to byte
+                }
+                return buf;
+            }
+
+            function sendEmail(excelBase64) {
+                console.log("Sending email...");
+                emailjs.send("service_xa0cx65", "template_jydl6yn", {
+                    to_email: 'odeedward04@gmail.com',
+                    subject: 'New Order Received',
+                    message: 'Attached is the order summary.',
+                    excel_file: excelBase64
+                }).then(() => {
+                    alert("Order sent successfully!");
+                    localStorage.removeItem("cart"); //clear the cart 
+                    displayCart();
+                }).catch(error => {
+                    console.error("Error sending email:", error);
+                    alert("Failed to send order. Check console for more details.");
+                });
+            }
+
+
+
             //Load and display the cart 
             displayCart();
         </script>
         <style>
+            #cart p {
+                font-size: 20px;
+                color: #666;
+                text-align: center;
+                padding: 20px;
+                font-weight: bold;
+            }
             
+            .cart-item {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 10px;
+                border-bottom: 1px solid #ccc;
+            }
             
-#cart p {
-    font-size: 20px;
-    color: #666;
-    text-align: center;
-    padding: 20px;
-    font-weight: bold;
-}
-
-.cart-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-}
-
-
-.cart-item span {
-    flex: 1;
-    font-size: 16px;
-    color: #333;
-    margin-right: 10px;
-}
-
-
-.quantity-control {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-
-.quantity-control button {
-    padding: 5px 10px;
-    font-size: 16px;
-    color: white;
-    background-color: #007bff;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-.quantity-control button:hover {
-    background-color: #0056b3;
-}
-
-
-.remove-item-btn {
-    padding: 5px 10px;
-    color: white;
-    background-color: #dc3545;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-left: 10px;
-}
-
-.remove-item-btn:hover {
-    background-color: #c82333;
-}
-
-
-#total-price {
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 20px;
-    color: #333;
-}
-
+            .cart-item span {
+                flex: 1;
+                font-size: 16px;
+                color: #333;
+                margin-right: 10px;
+            }
+            
+            .quantity-control {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+            }
+            
+            .quantity-control button {
+                padding: 5px 10px;
+                font-size: 16px;
+                color: white;
+                background-color: #007bff;
+                border: none;
+                border-radius: 6px;
+                cursor: pointer;
+            }
+            
+            .quantity-control button:hover {
+                background-color: #0056b3;
+            }
+            
+            .remove-item-btn {
+                padding: 5px 10px;
+                color: white;
+                background-color: #dc3545;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                margin-left: 10px;
+            }
+            
+            .remove-item-btn:hover {
+                background-color: #c82333;
+            }
+            
+            #total-price {
+                font-size: 18px;
+                font-weight: bold;
+                margin-top: 20px;
+                color: #333;
+            }
         </style>
     </section>
 
     <div class="sendorder">
-        <button class="send" type="button">PLACE ORDER</button>
+        <button class="send" type="button" onclick="placeOrder()">PLACE ORDER</button>
+
     </div>
 
     <footer class="footer1">
@@ -257,35 +351,38 @@
                 <li>
                     <a href="sevices.html">Services</a>
                 </li>
-                
+
                 <li>
                     <a href="ContactUs.html">Contact</a>
                 </li>
-                
+
             </ul>
 
             <ul class="media-icons">
-                <li><a href="https://www.facebook.com" target="_blank" class="fab fa-facebook-f"></a></li>
-                <li><a href="https://www.twitter.com" target="_blank" class="fab fa-twitter"></a></li>
-                <li><a href="https://www.instagram.com" target="_blank" class="fab fa-instagram"></a></li>
+                <li>
+                    <a href="https://www.facebook.com" target="_blank" class="fab fa-facebook-f"></a>
+                </li>
+                <li>
+                    <a href="https://www.twitter.com" target="_blank" class="fab fa-twitter"></a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com" target="_blank" class="fab fa-instagram"></a>
+                </li>
             </ul>
-            
 
-            <p>Founded in 2002, the Abody family business started its journey
-                in Africa, showcasing their keen understanding of
-                the local markets and their ability to navigate diverse
-                trading landscapes.
 
-                
-                </p>
-                <br>
+            <p>Founded in 2002, the Abody family business started its journey in Africa, showcasing their keen understanding of the local markets and their ability to navigate diverse trading landscapes.
 
-                <p>Copyright © 2024 ABODY - All Rights Reserved</p>
+
+            </p>
+            <br>
+
+            <p>Copyright © 2024 ABODY - All Rights Reserved</p>
 
         </div>
 
 
-        
+
     </footer>
 </body>
 
